@@ -9,7 +9,7 @@ public class Permute {
     public List<List<Integer>> permute(int[] nums) {
         List<List<Integer>> result=new LinkedList<>();
         appentItem(nums,new boolean[nums.length],0,new ArrayDeque<>(),result);
-//        result.forEach(System.out::println);
+        result.forEach(System.out::println);
         return result;
     }
 
