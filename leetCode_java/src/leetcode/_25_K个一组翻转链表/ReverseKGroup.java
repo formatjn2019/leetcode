@@ -9,6 +9,7 @@ public class ReverseKGroup {
         if (k <2 && head == null){
             return head;
         }
+        //翻转用的数组
         ListNode []tempArray=new ListNode[k];
         for (int i=0;i<k;i++){
             if (head==null){

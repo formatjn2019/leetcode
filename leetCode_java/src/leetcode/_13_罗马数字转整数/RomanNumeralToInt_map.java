@@ -6,18 +6,18 @@ import java.util.Map;
 public class RomanNumeralToInt_map {
     public int romanToInt(String s) {
         char[] chars = s.toCharArray();
-        int result=0;
-        char []unitStr=new char[]{'M','D','C','L','X','V','I'};
-        int []unit=new int[]{1000,500,100,50,10,5,1};
-        Map<Character,Integer> map = new HashMap<>();
-        for (int i=0;i<unitStr.length;i++){
-            map.put(unitStr[i],unit[i]);
+        int result = 0;
+        char[] unitStr = new char[]{'M', 'D', 'C', 'L', 'X', 'V', 'I'};
+        int[] unit = new int[]{1000, 500, 100, 50, 10, 5, 1};
+        Map<Character, Integer> map = new HashMap<>();
+        for (int i = 0; i < unitStr.length; i++) {
+            map.put(unitStr[i], unit[i]);
         }
-        for (int index=0;index<chars.length;index++){
-            if (index+1<chars.length && map.get(chars[index+1])>map.get(chars[index])){
-                result+=-map.get(chars[index++])+map.get(chars[index]);
-            }else {
-                result+=map.get(chars[index]);
+        for (int index = 0; index < chars.length; index++) {
+            if (index + 1 < chars.length && map.get(chars[index + 1]) > map.get(chars[index])) {
+                result += -map.get(chars[index++]) + map.get(chars[index]);
+            } else {
+                result += map.get(chars[index]);
             }
         }
         return result;

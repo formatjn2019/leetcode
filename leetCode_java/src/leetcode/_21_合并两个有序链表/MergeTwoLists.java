@@ -4,6 +4,7 @@ import leetcode.ListNode;
 
 public class MergeTwoLists {
     public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
+        //卫语句，减少判定
         if (l1 == null || l2 == null) {
             return l1 == null ? l2 : l1;
         }
@@ -16,6 +17,7 @@ public class MergeTwoLists {
             result=l2;
             l2=l2.next;
         }
+        //拆链，合链过程
         for (ListNode temp=result;;temp=temp.next){
             if (l1==null || l2==null){
                 temp.next=l1==null?l2:l1;

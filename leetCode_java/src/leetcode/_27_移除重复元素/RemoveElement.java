@@ -8,6 +8,7 @@ public class RemoveElement {
             return 0;
         }
         int start=0;
+        //双指针，若移除元素，则用最后一个元素去覆盖
         for (int end=nums.length-1;start<end;start++){
             if (nums[start]==val){
                 nums[start--]=nums[end--];
