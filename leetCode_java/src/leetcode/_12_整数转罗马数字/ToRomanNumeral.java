@@ -2,12 +2,12 @@ package leetcode._12_整数转罗马数字;
 
 public class ToRomanNumeral {
     public String intToRoman(int num) {
-        int []unit=new int[]{1000,900,500,400,100,90,50,40,10,9,5,4,1};
-        String []unitStr=new String[]{"M","CM","D","CD","C","XC","L","XL","X","IX","V","IV","I"};
-        StringBuilder sb=new StringBuilder();
-        for (int cut=0;num>0;cut++){
-            while (num>=unit[cut]){
-                num-=unit[cut];
+        int[] unit = new int[]{1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1};
+        String[] unitStr = new String[]{"M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I"};
+        StringBuilder sb = new StringBuilder();
+        for (int cut = 0; num > 0; cut++) {
+            while (num >= unit[cut]) {
+                num -= unit[cut];
                 sb.append(unitStr[cut]);
             }
         }

@@ -4,7 +4,9 @@ import java.util.Arrays;
 
 public class MaxArea_doublePoint {
     public int maxArea(int[] height) {
+        //初始化结果为两端的值
         int result=Math.min(height[0],height[height.length-1])*(height.length-1);
+        //依次移动两段指针，每次移动指向最低的容器壁的指针，更新结果
         for (int l=0,r=height.length-1;l<r;) {
             if (height[l] > height[r]){
                 r--;
