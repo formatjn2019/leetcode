@@ -6,11 +6,11 @@ public class JumpII_Recursion_Greedy {
             return 0;
         }
         int result = 1, max = nums[0], start = 1;
-        for (int newMax = max; max < nums.length-1; result++) {
+        for (int newMax = max; max < nums.length - 1; result++) {
             for (; start <= max; start++) {
                 newMax = Math.max(newMax, start + nums[start]);
             }
-            max=newMax;
+            max = newMax;
         }
         return result;
     }

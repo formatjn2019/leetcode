@@ -9,9 +9,9 @@ import java.util.stream.Stream;
 
 public class SolveSudoku_array {
     public void solveSudoku(char[][] board) {
-        Set[] lineSets = {new TreeSet<>(),new TreeSet<>(),new TreeSet<>(),new TreeSet<>(),new TreeSet<>(),new TreeSet<>(),new TreeSet<>(),new TreeSet<>(),new TreeSet<>()};
-        Set[] rowSets = {new TreeSet<>(),new TreeSet<>(),new TreeSet<>(),new TreeSet<>(),new TreeSet<>(),new TreeSet<>(),new TreeSet<>(),new TreeSet<>(),new TreeSet<>()};
-        Set[] blockdSets = {new TreeSet<>(),new TreeSet<>(),new TreeSet<>(),new TreeSet<>(),new TreeSet<>(),new TreeSet<>(),new TreeSet<>(),new TreeSet<>(),new TreeSet<>()};
+        Set[] lineSets = {new TreeSet<>(), new TreeSet<>(), new TreeSet<>(), new TreeSet<>(), new TreeSet<>(), new TreeSet<>(), new TreeSet<>(), new TreeSet<>(), new TreeSet<>()};
+        Set[] rowSets = {new TreeSet<>(), new TreeSet<>(), new TreeSet<>(), new TreeSet<>(), new TreeSet<>(), new TreeSet<>(), new TreeSet<>(), new TreeSet<>(), new TreeSet<>()};
+        Set[] blockdSets = {new TreeSet<>(), new TreeSet<>(), new TreeSet<>(), new TreeSet<>(), new TreeSet<>(), new TreeSet<>(), new TreeSet<>(), new TreeSet<>(), new TreeSet<>()};
         for (int i = 0; i < board.length; i++) {
             for (int j = 0; j < board[i].length; j++) {
                 int blockIndex = i / 3 * 3 + j / 3;
@@ -23,22 +23,22 @@ public class SolveSudoku_array {
                 }
             }
         }
-        boolean b=fillBlock(board, 0, lineSets, rowSets, blockdSets);
-        if (b){
+        boolean b = fillBlock(board, 0, lineSets, rowSets, blockdSets);
+        if (b) {
             Arrays.stream(board)
                     .map(Arrays::toString)
                     .forEach(System.out::println);
-        }else {
+        } else {
             System.out.println("算错了");
         }
-        IntStream.range(0,9)
-                .mapToObj(i->isAvailAble(board,i/3*3,i%3*3,0))
+        IntStream.range(0, 9)
+                .mapToObj(i -> isAvailAble(board, i / 3 * 3, i % 3 * 3, 0))
                 .forEach(System.out::println);
     }
 
 
     public boolean fillBlock(char[][] board, int index, Set[] lineSets, Set[] rowSets, Set[] blockSets) {
-        if (index==81){
+        if (index == 81) {
             return true;
         }
         int i = index / 9;
@@ -52,7 +52,7 @@ public class SolveSudoku_array {
                     rowSets[j].add(t);
                     blockSets[blockIndex].add(t);
                     //没有通过，继续尝试
-                    if (fillBlock(board, index + 1, lineSets, rowSets, blockSets)){
+                    if (fillBlock(board, index + 1, lineSets, rowSets, blockSets)) {
                         return true;
                     }
                     lineSets[i].remove(t);

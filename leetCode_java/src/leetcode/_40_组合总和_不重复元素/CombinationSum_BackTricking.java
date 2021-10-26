@@ -24,12 +24,11 @@ public class CombinationSum_BackTricking {
             return;
         }
         appendItem(candidates, usedItem, result, target, index + 1);
-        if (index==0 || candidates[index-1]!=candidates[index]||usedItem[index-1]){
+        if (index == 0 || candidates[index - 1] != candidates[index] || usedItem[index - 1]) {
             usedItem[index] = true;
             appendItem(candidates, usedItem, result, target - candidates[index], index + 1);
             usedItem[index] = false;
         }
-
     }
 
     public static void main(String[] args) {

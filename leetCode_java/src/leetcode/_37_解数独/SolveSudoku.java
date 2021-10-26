@@ -37,7 +37,7 @@ public class SolveSudoku {
 
 
     public boolean fillBlock(char[][] board, int index, List<TreeSet<Object>> lineSets, List<TreeSet<Object>> rowSets, List<TreeSet<Object>> blockSets) {
-        if (index==81){
+        if (index == 81) {
             return true;
         }
         int i = index / 9;
@@ -51,7 +51,7 @@ public class SolveSudoku {
                     rowSets.get(j).add(t);
                     blockSets.get(blockIndex).add(t);
                     //没有通过，继续尝试
-                    if (fillBlock(board, index + 1, lineSets, rowSets, blockSets)){
+                    if (fillBlock(board, index + 1, lineSets, rowSets, blockSets)) {
                         return true;
                     }
                     lineSets.get(i).remove(t);

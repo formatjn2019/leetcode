@@ -12,6 +12,7 @@ public class CombinationSum {
         Arrays.sort(candidates);
         ArrayList<List<Integer>> result = new ArrayList<>();
         Map<Integer, List<List<Integer>>> addItem = new TreeMap<>();
+        //预先生成的数据
         addItem.put(0, List.of(List.of()));
         appendItem(candidates, result, addItem, target, 0);
 //        System.out.println(result);
@@ -64,7 +65,7 @@ public class CombinationSum {
     public static void main(String[] args) {
         CombinationSum combinationSum = new CombinationSum();
 
-        List<List<Integer>> lists = combinationSum.combinationSum(new int[]{2,7,6,3,5,1}, 9);
+        List<List<Integer>> lists = combinationSum.combinationSum(new int[]{2, 7, 6, 3, 5, 1}, 9);
         lists.stream()
                 .forEach(System.out::println);
         System.out.println(lists.size());

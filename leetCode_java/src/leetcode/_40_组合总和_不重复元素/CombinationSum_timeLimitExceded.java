@@ -44,7 +44,7 @@ public class CombinationSum_timeLimitExceded {
     public static void main(String[] args) {
         CombinationSum_timeLimitExceded combinationSum = new CombinationSum_timeLimitExceded();
 
-        List<List<Integer>> lists = combinationSum.combinationSum2(new int[]{10,1,2,7,6,1,5}, 8);
+        List<List<Integer>> lists = combinationSum.combinationSum2(new int[]{10, 1, 2, 7, 6, 1, 5}, 8);
         lists.stream()
                 .forEach(System.out::println);
         System.out.println(lists.size());
