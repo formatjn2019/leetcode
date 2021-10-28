@@ -49,7 +49,7 @@ public class GenerateMatrix {
                 for (; startX > depth; startX--) {
                     matrix[startX][startY] = current++;
                 }
-                fillMatrix(matrix, startX+1, startY+1, current, (dir + 1) % 4, depth + 1);
+                fillMatrix(matrix, startX + 1, startY + 1, current, (dir + 1) % 4, depth + 1);
             }
         }
     }

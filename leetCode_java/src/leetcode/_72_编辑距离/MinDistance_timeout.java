@@ -85,9 +85,9 @@ public class MinDistance_timeout {
         MinDistance_timeout minDistance = new MinDistance_timeout();
         Map<String, String> testDatas = Map.of(
                 "aaabbccc", "aaaabcccc",
-                "a","b",
-                "ab","a",
-                "horse","ros",
+                "a", "b",
+                "ab", "a",
+                "horse", "ros",
                 "intention", "execution"
         );
         testDatas.entrySet().stream()

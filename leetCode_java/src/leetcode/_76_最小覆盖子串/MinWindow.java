@@ -16,7 +16,7 @@ public class MinWindow {
 //        targetMap.entrySet()
 //                .forEach(System.out::println);
         int complete = targetMap.size();
-        int min, minIndex=0;;
+        int min, minIndex = 0;
         int fast = 0, slow = 0;
         for (fast = 0; fast < s.length(); fast++) {
             if (targetMap.containsKey(s.charAt(fast))) {
@@ -30,25 +30,25 @@ public class MinWindow {
             }
         }
         if (complete == 0) {
-            min=fast+1;
-            while (fast<s.length()){
+            min = fast + 1;
+            while (fast < s.length()) {
                 //慢指针前移判定
                 char ch = s.charAt(slow);
-                if (!targetMap.containsKey(ch)||targetMap.get(ch).get()<0){
+                if (!targetMap.containsKey(ch) || targetMap.get(ch).get() < 0) {
                     slow++;
-                    targetMap.getOrDefault(ch,new AtomicInteger()).incrementAndGet();
-                    if (fast-slow<min){
-                        min=fast-slow+1;
-                        minIndex=slow;
+                    targetMap.getOrDefault(ch, new AtomicInteger()).incrementAndGet();
+                    if (fast - slow < min) {
+                        min = fast - slow + 1;
+                        minIndex = slow;
                     }
-                }else {
+                } else {
                     //自增符号判定
-                    if (++fast!=s.length() && targetMap.containsKey(s.charAt(fast))){
+                    if (++fast != s.length() && targetMap.containsKey(s.charAt(fast))) {
                         targetMap.get(s.charAt(fast)).decrementAndGet();
                     }
                 }
             }
-            return s.substring(minIndex,minIndex+min);
+            return s.substring(minIndex, minIndex + min);
         }
         return "";
     }
@@ -63,7 +63,7 @@ public class MinWindow {
         );
         testData.entrySet().stream()
                 .peek(System.out::println)
-                .map(entry->minWindow.minWindow(entry.getKey(),entry.getValue()))
+                .map(entry -> minWindow.minWindow(entry.getKey(), entry.getValue()))
                 .forEach(System.out::println);
     }
 }

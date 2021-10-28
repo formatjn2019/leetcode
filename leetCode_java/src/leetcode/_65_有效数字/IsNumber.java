@@ -6,15 +6,15 @@ public class IsNumber {
     public boolean isNumber(String s) {
         char[] chars = s.toCharArray();
         int result = 0;
-        boolean numValid=false,indexValid=true;
+        boolean numValid = false, indexValid = true;
         //符号判定
-        if (result < chars.length && (chars[result] == '-' || chars[result]=='+')) {
+        if (result < chars.length && (chars[result] == '-' || chars[result] == '+')) {
             result++;
         }
         //小数点前数字判定
         while (result < chars.length && chars[result] >= '0' && chars[result] <= '9') {
             result++;
-            numValid=true;
+            numValid = true;
         }
         //小数点判定
         if (result < chars.length && chars[result] == '.') {
@@ -23,20 +23,20 @@ public class IsNumber {
         //小数点后数字判定
         while (result < chars.length && chars[result] >= '0' && chars[result] <= '9') {
             result++;
-            numValid=true;
+            numValid = true;
         }
         //指数判定
         if (result < chars.length && (chars[result] == 'e' || chars[result] == 'E')) {
             result++;
-            indexValid=false;
+            indexValid = false;
             //符号判定
-            if (result < chars.length && (chars[result] == '-' || chars[result]=='+')) {
+            if (result < chars.length && (chars[result] == '-' || chars[result] == '+')) {
                 result++;
             }
             //数字判定
             while (result < chars.length && chars[result] >= '0' && chars[result] <= '9') {
                 result++;
-                indexValid=true;
+                indexValid = true;
             }
         }
         return result == chars.length && numValid && indexValid;

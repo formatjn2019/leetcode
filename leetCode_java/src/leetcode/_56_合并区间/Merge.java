@@ -9,8 +9,8 @@ public class Merge {
         boolean[] merged = new boolean[intervals.length];
         int newSize = intervals.length;
         for (int i = 0; i < intervals.length; ) {
-            int j = i+1;
-            for ( ;j < intervals.length; j++) {
+            int j = i + 1;
+            for (; j < intervals.length; j++) {
                 //i,j合并
                 if (intervals[i][1] >= intervals[j][0] && !merged[j]) {
                     intervals[i][1] = Math.max(intervals[i][1], intervals[j][1]);
@@ -20,10 +20,10 @@ public class Merge {
                     break;
                 }
             }
-            i=j;
+            i = j;
         }
         int[][] result = new int[newSize][];
-        for (int i = 0,index=0; i < intervals.length; i++) {
+        for (int i = 0, index = 0; i < intervals.length; i++) {
             if (!merged[i]) {
                 result[index++] = intervals[i];
             }
@@ -34,7 +34,7 @@ public class Merge {
 
     public static void main(String[] args) {
         Merge merge = new Merge();
-        merge.merge(new int[][]{{1,4},{0,4}});
+        merge.merge(new int[][]{{1, 4}, {0, 4}});
         merge.merge(new int[][]{{1, 3}, {2, 6}, {8, 10}, {15, 18}});
     }
 }

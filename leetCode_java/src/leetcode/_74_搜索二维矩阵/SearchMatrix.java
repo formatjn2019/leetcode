@@ -28,13 +28,13 @@ public class SearchMatrix {
             start = 1;
             end = matrix[medium].length;
             while (start < end) {
-                int row=(start+end)/2;
-                if (matrix[medium][row]==target){
+                int row = (start + end) / 2;
+                if (matrix[medium][row] == target) {
                     return true;
-                }else if (matrix[medium][row]<target){
-                    start=row+1;
-                }else {
-                    end=row;
+                } else if (matrix[medium][row] < target) {
+                    start = row + 1;
+                } else {
+                    end = row;
                 }
 
             }
@@ -49,7 +49,7 @@ public class SearchMatrix {
 
         long count = Arrays.stream(ints)
                 .flatMapToInt(Arrays::stream)
-                .map(i->i*3)
+                .map(i -> i * 3)
                 .filter(i -> searchMatrix.searchMatrix(ints, i))
                 .count();
         System.out.println(count);

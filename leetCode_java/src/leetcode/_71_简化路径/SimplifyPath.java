@@ -11,8 +11,10 @@ public class SimplifyPath {
 //        System.out.println(Arrays.toString(split));
         for (String s : split) {
             switch (s) {
-                case "" -> {}
-                case "." -> {}
+                case "" -> {
+                }
+                case "." -> {
+                }
                 case ".." -> {
                     if (stack.size() > 0) {
                         stack.pop();
@@ -26,8 +28,8 @@ public class SimplifyPath {
 //        System.out.println(stack);
         StringBuilder sb = new StringBuilder();
         for (String s : stack) {
-            sb.insert(0,s);
-            sb.insert(0,'/');
+            sb.insert(0, s);
+            sb.insert(0, '/');
         }
         return sb.length() == 0 ? "/" : sb.toString();
     }

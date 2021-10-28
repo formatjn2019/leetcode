@@ -20,6 +20,7 @@ public class SetZeroes {
                 Arrays.fill(matrix[i], 0);
             }
         }
+        //列置零
         for (int j = 0; j < width; j++) {
             if (zoneFlag[j]) {
                 for (int i = 0; i < height; i++) {

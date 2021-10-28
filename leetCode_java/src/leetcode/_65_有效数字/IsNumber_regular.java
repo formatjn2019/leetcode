@@ -13,7 +13,7 @@ public class IsNumber_regular {
         String[] unvalid = new String[]{"abc", "1a", "1e", "e3", "99e2.5", "--6", "-+3", "95a54e53"};
         System.out.println("有效判定错误");
         Arrays.stream(validNum)
-                .filter(s->!(isNumber.isNumber(s)))
+                .filter(s -> !(isNumber.isNumber(s)))
                 .forEach(System.out::println);
         System.out.println("无效判定错误");
         Arrays.stream(unvalid)
