@@ -10,12 +10,12 @@ public class MaxProfit_monotonicStack {
         int result = 0;
         for (int price : prices) {
             while (!stack.isEmpty() && stack.getFirst() > price) {
-                result = Math.max(result,- stack.getLast() + stack.pop());
+                result = Math.max(result, -stack.getLast() + stack.pop());
             }
             stack.push(price);
         }
-        if (!stack.isEmpty()){
-            result=Math.max(result,-stack.getLast()+stack.getFirst());
+        if (!stack.isEmpty()) {
+            result = Math.max(result, -stack.getLast() + stack.getFirst());
         }
         System.out.println(result);
         return result;
@@ -23,6 +23,6 @@ public class MaxProfit_monotonicStack {
 
     public static void main(String[] args) {
         MaxProfit_monotonicStack maxProfit = new MaxProfit_monotonicStack();
-        maxProfit.maxProfit(new int[]{7,1,5,3,6,4});
+        maxProfit.maxProfit(new int[]{7, 1, 5, 3, 6, 4});
     }
 }

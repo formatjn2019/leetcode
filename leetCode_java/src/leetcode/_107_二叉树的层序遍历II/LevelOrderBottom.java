@@ -9,7 +9,6 @@ import java.util.List;
 
 public class LevelOrderBottom {
     public List<List<Integer>> levelOrderBottom(TreeNode root) {
-
         List<List<Integer>> result = new ArrayList<>();
         if (root == null) {
             return result;
@@ -19,7 +18,7 @@ public class LevelOrderBottom {
         do {
             nextLevel = new LinkedList<>();
             List<Integer> tempList = new LinkedList<>();
-            result.add(0,tempList);
+            result.add(0, tempList);
             for (TreeNode levelNode : levelNodes) {
                 if (levelNode.left != null) {
                     nextLevel.add(levelNode.left);
@@ -33,6 +32,7 @@ public class LevelOrderBottom {
         } while (nextLevel.size() > 0);
         return result;
     }
+
     public static void main(String[] args) {
         LevelOrderBottom levelOrder = new LevelOrderBottom();
         TreeNode treeNode = TreeNode.createTreeNode(3, 9, 20, -1, -1, 15, 7);

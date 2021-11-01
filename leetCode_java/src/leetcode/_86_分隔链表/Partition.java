@@ -4,6 +4,7 @@ import leetcode.ListNode;
 
 public class Partition {
     public ListNode partition(ListNode head, int x) {
+        //哨兵节点
         ListNode newHead = new ListNode(), newNext = new ListNode();
         ListNode tp1 = newHead, tp2 = newNext;
         for (; head != null; head = head.next) {

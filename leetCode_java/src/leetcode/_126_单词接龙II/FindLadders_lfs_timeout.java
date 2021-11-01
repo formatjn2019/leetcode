@@ -28,16 +28,16 @@ public class FindLadders_lfs_timeout {
 
     public List<List<String>> searchResult(String target, Map<String, List<String>> wordToSubDic,
                                            Map<String, List<String>> subToWordDic, Map<String, List<LinkedHashSet<String>>> nextFloor) {
-        if (nextFloor.keySet().size() == 0 ){
+        if (nextFloor.keySet().size() == 0) {
             return List.of();
-        }else if (nextFloor.containsKey(target)) {
+        } else if (nextFloor.containsKey(target)) {
             return nextFloor.get(target)
                     .stream()
                     .map(ArrayList::new)
                     .distinct()
                     .collect(Collectors.toList());
         } else {
-            Map<String,List<LinkedHashSet<String>>> newNextFloor=new HashMap<>();
+            Map<String, List<LinkedHashSet<String>>> newNextFloor = new HashMap<>();
             //下一层
             for (String pre : nextFloor.keySet()) {
                 //下一个单词
@@ -49,13 +49,13 @@ public class FindLadders_lfs_timeout {
                             if (!passed.contains(word)) {
                                 LinkedHashSet<String> newPassed = new LinkedHashSet<>(passed);
                                 newPassed.add(word);
-                                newNextFloor.computeIfAbsent(word,_w->new ArrayList<>()).add(newPassed);
+                                newNextFloor.computeIfAbsent(word, _w -> new ArrayList<>()).add(newPassed);
                             }
                         }
                     }
                 }
             }
-            return searchResult(target,wordToSubDic,subToWordDic,newNextFloor);
+            return searchResult(target, wordToSubDic, subToWordDic, newNextFloor);
         }
     }
 

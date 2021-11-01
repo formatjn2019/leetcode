@@ -21,7 +21,7 @@ public class PathSumII_rewrite {
         List<List<Integer>> result = new LinkedList<>();
         result.addAll(pathSum(root.left, targetSum - root.val));
         result.addAll(pathSum(root.right, targetSum - root.val));
-        result.forEach(item->item.add(0,root.val));
+        result.forEach(item -> item.add(0, root.val));
         return result;
     }
 

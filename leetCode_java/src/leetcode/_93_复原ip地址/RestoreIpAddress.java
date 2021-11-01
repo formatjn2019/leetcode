@@ -26,7 +26,7 @@ public class RestoreIpAddress {
             strings.add("0");
             appendItem(subStr.substring(1), strings, results);
         } else {
-            for (int i = 1; i <= Math.min(3,subStr.length()); i++) {
+            for (int i = 1; i <= Math.min(3, subStr.length()); i++) {
                 if (Integer.parseInt(subStr.substring(0, i)) < 256) {
                     ArrayList<String> strings = new ArrayList<>(item);
                     strings.add(subStr.substring(0, i));
@@ -41,10 +41,10 @@ public class RestoreIpAddress {
         RestoreIpAddress restoreIpAddress = new RestoreIpAddress();
         List<String> strings = List.of(
                 "25525511135"
-                ,"1111"
-                ,"0000"
-                ,"010010"
-                ,"101023"
+                , "1111"
+                , "0000"
+                , "010010"
+                , "101023"
         );
         strings.stream()
                 .map(restoreIpAddress::restoreIpAddresses)

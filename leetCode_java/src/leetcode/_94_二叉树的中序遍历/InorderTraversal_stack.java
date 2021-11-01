@@ -14,13 +14,13 @@ public class InorderTraversal_stack {
         TreeNode temp = root;
 //        stack.push(temp);
         while (temp != null || stack.size() != 0) {
-            if (temp!=null){
+            if (temp != null) {
                 stack.push(temp);
-                temp=temp.left;
-            }else {
+                temp = temp.left;
+            } else {
                 TreeNode pop = stack.pop();
                 result.add(pop.val);
-                temp=pop.right;
+                temp = pop.right;
             }
         }
         return result;

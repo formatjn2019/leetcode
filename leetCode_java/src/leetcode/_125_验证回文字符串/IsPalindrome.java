@@ -5,9 +5,9 @@ import java.util.Locale;
 
 public class IsPalindrome {
     public boolean isPalindrome(String s) {
-        char[] chars = s.toLowerCase().replaceAll("[^a-z0-9]","").toCharArray();
-        for (int lp=0,rp=chars.length-1;lp<rp;lp++,rp--){
-            if (chars[lp]!=chars[rp]){
+        char[] chars = s.toLowerCase().replaceAll("[^a-z0-9]", "").toCharArray();
+        for (int lp = 0, rp = chars.length - 1; lp < rp; lp++, rp--) {
+            if (chars[lp] != chars[rp]) {
                 return false;
             }
         }

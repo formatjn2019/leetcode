@@ -8,27 +8,27 @@ import java.util.List;
 
 public class LevelOrder {
     public List<List<Integer>> levelOrder(TreeNode root) {
-        List<List<Integer>> result= new ArrayList<>();
-        if (root==null){
+        List<List<Integer>> result = new ArrayList<>();
+        if (root == null) {
             return result;
         }
-        List<TreeNode> levelNodes= List.of(root);
+        List<TreeNode> levelNodes = List.of(root);
         List<TreeNode> nextLevel;
         do {
-            nextLevel=new LinkedList<>();
-            List<Integer> tempList= new LinkedList<>();
+            nextLevel = new LinkedList<>();
+            List<Integer> tempList = new LinkedList<>();
             result.add(tempList);
             for (TreeNode levelNode : levelNodes) {
-                if (levelNode.left!=null){
+                if (levelNode.left != null) {
                     nextLevel.add(levelNode.left);
                 }
                 tempList.add(levelNode.val);
-                if (levelNode.right!=null){
+                if (levelNode.right != null) {
                     nextLevel.add(levelNode.right);
                 }
             }
-            levelNodes=nextLevel;
-        }while (nextLevel.size()>0);
+            levelNodes = nextLevel;
+        } while (nextLevel.size() > 0);
         return result;
     }
 

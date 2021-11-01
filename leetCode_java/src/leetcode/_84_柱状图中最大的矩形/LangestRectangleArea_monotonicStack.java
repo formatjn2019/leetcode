@@ -12,9 +12,9 @@ public class LangestRectangleArea_monotonicStack {
         stack.push(-1);
         for (int i = 0; i <= heights.length; i++) {
             //比该元素大的出栈
-            while (stack.getFirst() != -1  && (i==heights.length || heights[stack.getFirst()] > heights[i])) {
+            while (stack.getFirst() != -1 && (i == heights.length || heights[stack.getFirst()] > heights[i])) {
                 Integer index = stack.pop();
-                result = Math.max(heights[index] * (i - stack.getFirst()-1), result);
+                result = Math.max(heights[index] * (i - stack.getFirst() - 1), result);
             }
             stack.push(i);
         }

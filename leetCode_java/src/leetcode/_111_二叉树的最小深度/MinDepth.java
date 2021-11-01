@@ -3,8 +3,6 @@ package leetcode._111_二叉树的最小深度;
 import leetcode.TreeNode;
 
 public class MinDepth {
-
-
     public int minDepth(TreeNode root) {
         if (root==null){
             return 0;

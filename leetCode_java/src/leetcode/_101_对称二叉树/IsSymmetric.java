@@ -4,7 +4,7 @@ import leetcode.TreeNode;
 
 public class IsSymmetric {
     public boolean isSymmetric(TreeNode root) {
-        return isSymmetric(root.left,root.right);
+        return isSymmetric(root.left, root.right);
     }
 
     public boolean isSymmetric(TreeNode lTree, TreeNode rTree) {
@@ -14,6 +14,6 @@ public class IsSymmetric {
         if (lTree == null || rTree == null || lTree.val != rTree.val) {
             return false;
         }
-        return isSymmetric(lTree.left,rTree.right) && isSymmetric(lTree.right,rTree.left);
+        return isSymmetric(lTree.left, rTree.right) && isSymmetric(lTree.right, rTree.left);
     }
 }

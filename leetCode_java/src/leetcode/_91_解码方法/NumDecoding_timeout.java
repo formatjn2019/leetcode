@@ -9,21 +9,21 @@ public class NumDecoding_timeout {
     }
 
     public int isAvaliable(char[] chars, int start, int end) {
-        if (start == end ) {
+        if (start == end) {
             return 1;
         }
         if (start > end) {
             return 0;
         }
-        int result= 0 ;
+        int result = 0;
         //当前值
-        if (chars[end-1]!='0'){
-            result+=isAvaliable(chars, start, end - 1);
+        if (chars[end - 1] != '0') {
+            result += isAvaliable(chars, start, end - 1);
         }
-        if (end-2>=0 && (chars[end-2]=='1' || (chars[end-2]=='2'&& (chars[end-1]<'7')))){
-            result+=isAvaliable(chars, start, end - 2);
+        if (end - 2 >= 0 && (chars[end - 2] == '1' || (chars[end - 2] == '2' && (chars[end - 1] < '7')))) {
+            result += isAvaliable(chars, start, end - 2);
         }
-        return  result ;
+        return result;
     }
 
 

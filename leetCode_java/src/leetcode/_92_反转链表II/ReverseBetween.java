@@ -4,30 +4,30 @@ import leetcode.ListNode;
 
 public class ReverseBetween {
     public ListNode reverseBetween(ListNode head, int left, int right) {
-        if (left==right){
+        if (left == right) {
             return head;
         }
-        ListNode newHead=new ListNode(0,head);
-        ListNode fp=head,lp=newHead;
+        ListNode newHead = new ListNode(0, head);
+        ListNode fp = head, lp = newHead;
         //移动到翻转开始的节点
-        for (int i=1;i<left;i++){
-            fp=fp.next;
-            lp=lp.next;
+        for (int i = 1; i < left; i++) {
+            fp = fp.next;
+            lp = lp.next;
         }
-        ListNode lastHead=null,mediumHead=null;
+        ListNode lastHead = null, mediumHead = null;
         //翻转
-        for (ListNode tpl=lp.next,tpr=fp.next;right!=left;right--){
+        for (ListNode tpl = lp.next, tpr = fp.next; right != left; right--) {
             //下一个
-            lastHead=tpr.next;
+            lastHead = tpr.next;
             //当前
-            mediumHead=tpr;
+            mediumHead = tpr;
             //前一个
-            tpr.next=tpl;
-            tpl=tpr;
-            tpr=lastHead;
+            tpr.next = tpl;
+            tpl = tpr;
+            tpr = lastHead;
         }
-        fp.next=lastHead;
-        lp.next=mediumHead;
+        fp.next = lastHead;
+        lp.next = mediumHead;
         return newHead.next;
     }
 

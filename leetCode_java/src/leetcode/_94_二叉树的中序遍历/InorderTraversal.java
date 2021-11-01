@@ -7,17 +7,18 @@ import java.util.List;
 
 public class InorderTraversal {
     public List<Integer> inorderTraversal(TreeNode root) {
-        List<Integer> result=new LinkedList<>();
-        traverse(root,result);
+        List<Integer> result = new LinkedList<>();
+        traverse(root, result);
         return result;
     }
-    public void traverse(TreeNode root,List<Integer> result){
-        if (root==null){
+
+    public void traverse(TreeNode root, List<Integer> result) {
+        if (root == null) {
             return;
         }
-        traverse(root.left,result);
+        traverse(root.left, result);
         result.add(root.val);
-        traverse(root.right,result);
+        traverse(root.right, result);
     }
 
     public static void main(String[] args) {

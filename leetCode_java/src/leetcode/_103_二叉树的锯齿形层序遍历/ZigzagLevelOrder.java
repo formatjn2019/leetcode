@@ -22,7 +22,7 @@ public class ZigzagLevelOrder {
             nextLevel = new ArrayDeque<>();
             List<Integer> tempList = new LinkedList<>();
             result.add(tempList);
-            while (levelNodes.size()>0) {
+            while (levelNodes.size() > 0) {
                 if (dir) {
                     TreeNode levelNode = levelNodes.removeFirst();
                     if (levelNode.left != null) {
@@ -51,7 +51,7 @@ public class ZigzagLevelOrder {
 
     public static void main(String[] args) {
         ZigzagLevelOrder levelOrder = new ZigzagLevelOrder();
-        TreeNode treeNode = TreeNode.createTreeNode(3,9,20,-1,-1,15,7);
+        TreeNode treeNode = TreeNode.createTreeNode(3, 9, 20, -1, -1, 15, 7);
         List<List<Integer>> lists = levelOrder.zigzagLevelOrder(treeNode);
         System.out.println(lists);
     }
