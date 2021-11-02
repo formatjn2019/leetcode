@@ -11,31 +11,31 @@ public class MinCut {
 //        System.out.println(s);
         //记忆集合
         Set<String> palindrome = new HashSet<>(), unPalindrome = new HashSet<>();
-        if (memoryedIsPartition(s,palindrome,unPalindrome)){
+        if (memoryedIsPartition(s, palindrome, unPalindrome)) {
             return 0;
-        }else if (s.length()==2){
+        } else if (s.length() == 2) {
             return 1;
         }
         char[] chars = s.toCharArray();
-        int[][] judgeArray = new int[chars.length+1][chars.length+1];
-        judgeArray[0][0]=1;
-        for (int i=0;i<judgeArray.length;i++){
-            judgeArray[i][i]=i+1;
+        int[][] judgeArray = new int[chars.length + 1][chars.length + 1];
+        judgeArray[0][0] = 1;
+        for (int i = 0; i < judgeArray.length; i++) {
+            judgeArray[i][i] = i + 1;
         }
         //第一次遍历，生成矩阵
         for (int i = 0; i < chars.length; i++) {
-            int current=judgeArray[i][i];
+            int current = judgeArray[i][i];
             for (int j = i; j < chars.length; j++) {
-                if (memoryedIsPartition(s.substring(i, j+1), palindrome, unPalindrome)) {
-                    judgeArray[i][j]=current;
-                    judgeArray[j+1][j+1]=Math.min(current+1,judgeArray[j+1][j+1]);
+                if (memoryedIsPartition(s.substring(i, j + 1), palindrome, unPalindrome)) {
+                    judgeArray[i][j] = current;
+                    judgeArray[j + 1][j + 1] = Math.min(current + 1, judgeArray[j + 1][j + 1]);
                 }
             }
         }
 
 
         Tools.showArray(judgeArray);
-        return judgeArray[judgeArray.length-1][judgeArray.length-1]-2;
+        return judgeArray[judgeArray.length - 1][judgeArray.length - 1] - 2;
     }
 
     //回文判断，记忆

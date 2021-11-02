@@ -9,15 +9,17 @@ public class PostorderTraversal {
     public List<Integer> postorderTraversal(TreeNode root) {
         return postorderTraversal(root, new ArrayList<>());
     }
-    public List<Integer> postorderTraversal(TreeNode root,List<Integer> result){
-        if (root==null){
+
+    public List<Integer> postorderTraversal(TreeNode root, List<Integer> result) {
+        if (root == null) {
             return List.of();
         }
-        postorderTraversal(root.left,result);
-        postorderTraversal(root.right,result);
+        postorderTraversal(root.left, result);
+        postorderTraversal(root.right, result);
         result.add(root.val);
         return result;
     }
+
     public static void main(String[] args) {
 
     }

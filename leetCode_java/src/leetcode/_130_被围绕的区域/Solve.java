@@ -6,25 +6,25 @@ import java.util.*;
 
 public class Solve {
     public void solve(char[][] board) {
-        int width=board[0].length;
-        int height=board.length;
+        int width = board[0].length;
+        int height = board.length;
         if (board.length < 3 || board[0].length < 3) {
             return;
         }
         Set<List<Integer>> circles = new HashSet<>();
         Set<List<Integer>> extendNode = new HashSet<>();
         //四个顶点
-        if (board[0][0]=='O'){
-            circles.add(List.of(0,0));
+        if (board[0][0] == 'O') {
+            circles.add(List.of(0, 0));
         }
-        if (board[0][width-1]=='O'){
-            circles.add(List.of(0,width-1));
+        if (board[0][width - 1] == 'O') {
+            circles.add(List.of(0, width - 1));
         }
-        if (board[height-1][0]=='O'){
-            circles.add(List.of(height-1,0));
+        if (board[height - 1][0] == 'O') {
+            circles.add(List.of(height - 1, 0));
         }
-        if (board[height-1][width-1]=='O'){
-            circles.add(List.of(height-1,width-1));
+        if (board[height - 1][width - 1] == 'O') {
+            circles.add(List.of(height - 1, width - 1));
         }
         //横向边界
         for (int i = 1; i < board[0].length - 1; i++) {
@@ -51,7 +51,7 @@ public class Solve {
                 }
             }
             if (board[i][board[0].length - 1] == 'O') {
-                circles.add(List.of( i,board[0].length - 1));
+                circles.add(List.of(i, board[0].length - 1));
                 if (extendNodes(circles, i, board[0].length - 2, board)) {
                     extendNode.add(List.of(i, board[0].length - 2));
                 }
@@ -59,33 +59,33 @@ public class Solve {
         }
 
         //扩展
-        while (extendNode.size()!=0){
-            List<List<Integer>> newNodes=new ArrayList<>();
+        while (extendNode.size() != 0) {
+            List<List<Integer>> newNodes = new ArrayList<>();
             for (List<Integer> integers : extendNode) {
                 //+
-                if (extendNodes(circles,integers.get(0)+1,integers.get(1),board)) {
-                    newNodes.add(List.of(integers.get(0)+1,integers.get(1)));
+                if (extendNodes(circles, integers.get(0) + 1, integers.get(1), board)) {
+                    newNodes.add(List.of(integers.get(0) + 1, integers.get(1)));
                 }
                 //-
-                if (extendNodes(circles,integers.get(0)-1,integers.get(1),board)) {
-                    newNodes.add(List.of(integers.get(0)-1,integers.get(1)));
+                if (extendNodes(circles, integers.get(0) - 1, integers.get(1), board)) {
+                    newNodes.add(List.of(integers.get(0) - 1, integers.get(1)));
                 }
                 // +
-                if (extendNodes(circles,integers.get(0),integers.get(1)+1,board)) {
-                    newNodes.add(List.of(integers.get(0),integers.get(1)+1));
+                if (extendNodes(circles, integers.get(0), integers.get(1) + 1, board)) {
+                    newNodes.add(List.of(integers.get(0), integers.get(1) + 1));
                 }
                 // -
-                if (extendNodes(circles,integers.get(0),integers.get(1)-1,board)) {
-                    newNodes.add(List.of(integers.get(0),integers.get(1)-1));
+                if (extendNodes(circles, integers.get(0), integers.get(1) - 1, board)) {
+                    newNodes.add(List.of(integers.get(0), integers.get(1) - 1));
                 }
             }
             extendNode.clear();
             extendNode.addAll(newNodes);
         }
-        Arrays.stream(board).forEach(line->Arrays.fill(line,'X'));
+        Arrays.stream(board).forEach(line -> Arrays.fill(line, 'X'));
         System.out.println(circles);
         for (List<Integer> circle : circles) {
-            board[circle.get(0)][circle.get(1)]='O';
+            board[circle.get(0)][circle.get(1)] = 'O';
         }
     }
 
@@ -98,7 +98,7 @@ public class Solve {
 
     public static void main(String[] args) {
         Solve solve = new Solve();
-        String [][] strings=new String[][]{{"X","O","X","O","X","O"},{"O","X","O","X","O","X"},{"X","O","X","O","X","O"},{"O","X","O","X","O","X"}};
+        String[][] strings = new String[][]{{"X", "O", "X", "O", "X", "O"}, {"O", "X", "O", "X", "O", "X"}, {"X", "O", "X", "O", "X", "O"}, {"O", "X", "O", "X", "O", "X"}};
         char[][] chars = Tools.changeToCharArray(strings);
         Tools.showArray(chars);
         System.out.println("_________________");

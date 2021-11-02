@@ -12,20 +12,20 @@ public class SingleNumber {
             if (tempNum[index] == null) {
                 tempNum[index] = new ArrayList<>();
             }
-            boolean contains=false;
+            boolean contains = false;
             for (int i = 0; i < tempNum[index].size(); i++) {
                 if (tempNum[index].get(i) == num) {
                     tempNum[index].remove(i);
-                    contains=true;
+                    contains = true;
                     break;
                 }
             }
-            if (!contains){
+            if (!contains) {
                 tempNum[index].add(num);
             }
         }
         for (ArrayList<Integer> integers : tempNum) {
-            if (integers !=null && integers.size()>0){
+            if (integers != null && integers.size() > 0) {
                 return integers.get(0);
             }
         }

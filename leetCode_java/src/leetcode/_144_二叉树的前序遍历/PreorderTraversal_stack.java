@@ -8,17 +8,17 @@ import java.util.List;
 
 public class PreorderTraversal_stack {
     public List<Integer> preorderTraversal(TreeNode root) {
-        ArrayList<Integer> result=new ArrayList<>();
-        ArrayDeque<TreeNode> stack=new ArrayDeque<>();
-        for (TreeNode tempNode=root;stack.size()>0 || tempNode!=null;){
+        ArrayList<Integer> result = new ArrayList<>();
+        ArrayDeque<TreeNode> stack = new ArrayDeque<>();
+        for (TreeNode tempNode = root; stack.size() > 0 || tempNode != null; ) {
             //入栈
-            while (tempNode!=null){
+            while (tempNode != null) {
                 result.add(tempNode.val);
                 stack.push(tempNode);
-                tempNode=tempNode.left;
+                tempNode = tempNode.left;
             }
             //出栈
-            tempNode=stack.pop().right;
+            tempNode = stack.pop().right;
         }
         return result;
     }

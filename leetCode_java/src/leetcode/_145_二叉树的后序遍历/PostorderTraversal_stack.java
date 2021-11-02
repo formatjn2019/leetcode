@@ -14,21 +14,21 @@ public class PostorderTraversal_stack {
     public List<Integer> postorderTraversal(TreeNode root) {
         List<Integer> result = new LinkedList<>();
         ArrayDeque<TreeNode> stack = new ArrayDeque<>();
-        for (TreeNode tempNode=root;stack.size()>0 || tempNode!=null;){
-            while (tempNode!=null){
-                result.add(0,tempNode.val);
+        for (TreeNode tempNode = root; stack.size() > 0 || tempNode != null; ) {
+            while (tempNode != null) {
+                result.add(0, tempNode.val);
                 stack.push(tempNode);
-                tempNode=tempNode.right;
+                tempNode = tempNode.right;
             }
-            tempNode=stack.pop().left;
+            tempNode = stack.pop().left;
         }
         return result;
     }
 
     public static void main(String[] args) {
-        PostorderTraversal postorderTraversal =new PostorderTraversal();
+        PostorderTraversal postorderTraversal = new PostorderTraversal();
         PostorderTraversal_stack postorderTraversal_stack = new PostorderTraversal_stack();
-        TreeNode treeNode = TreeNode.createTreeNode(5,3,4,1,2);
+        TreeNode treeNode = TreeNode.createTreeNode(5, 3, 4, 1, 2);
         System.out.println(postorderTraversal_stack.postorderTraversal(treeNode));
         System.out.println(postorderTraversal.postorderTraversal(treeNode));
     }

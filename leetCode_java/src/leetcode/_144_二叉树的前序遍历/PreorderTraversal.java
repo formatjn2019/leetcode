@@ -7,16 +7,16 @@ import java.util.List;
 
 public class PreorderTraversal {
     public List<Integer> preorderTraversal(TreeNode root) {
-
-        return preorderTraversal(root,new ArrayList<>());
+        return preorderTraversal(root, new ArrayList<>());
     }
-    public List<Integer> preorderTraversal(TreeNode root,List<Integer> result) {
-        if (root==null){
+
+    public List<Integer> preorderTraversal(TreeNode root, List<Integer> result) {
+        if (root == null) {
             return List.of();
         }
         result.add(root.val);
-        preorderTraversal(root.left,result);
-        preorderTraversal(root.right,result);
+        preorderTraversal(root.left, result);
+        preorderTraversal(root.right, result);
         return result;
     }
 }

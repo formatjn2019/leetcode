@@ -7,32 +7,36 @@ public class Candy {
         if (ratings.length < 2) {
             return 1;
         }
+        //排序分数
         int[] clone = Arrays.copyOf(ratings, ratings.length);
         Arrays.sort(clone);
-        int []indexs=new int[ratings.length];
-        boolean []used=new boolean[ratings.length];
-        for (int i=0;i<ratings.length;i++) {
-            int index=0;
-            for (;index<ratings.length;index++){
-                if (used[index]){
+        //依次按从小到大的顺序
+        //找到从小到大的分数的索引
+        int[] indexs = new int[ratings.length];
+        boolean[] used = new boolean[ratings.length];
+        for (int i = 0; i < ratings.length; i++) {
+            int index = 0;
+            for (; index < ratings.length; index++) {
+                if (used[index]) {
                     continue;
                 }
-                if (ratings[index]==clone[i]){
+                if (ratings[index] == clone[i]) {
                     break;
                 }
             }
-            indexs[i]=index;
-            used[index]=true;
+            indexs[i] = index;
+            used[index] = true;
         }
 
         int[] judgeArray = new int[ratings.length];
         Arrays.fill(judgeArray, 1);
+        //按照分数从小到大的顺序，将糖果的最小数量分给小朋友
         for (int index : indexs) {
-            if (index>0 && ratings[index]>ratings[index-1]){
-                judgeArray[index]=Math.max(judgeArray[index],judgeArray[index-1]+1);
+            if (index > 0 && ratings[index] > ratings[index - 1]) {
+                judgeArray[index] = Math.max(judgeArray[index], judgeArray[index - 1] + 1);
             }
-            if (index< judgeArray.length-1 && ratings[index]>ratings[index+1]){
-                judgeArray[index]=Math.max(judgeArray[index],judgeArray[index+1]+1);
+            if (index < judgeArray.length - 1 && ratings[index] > ratings[index + 1]) {
+                judgeArray[index] = Math.max(judgeArray[index], judgeArray[index + 1] + 1);
             }
         }
         System.out.println(Arrays.toString(judgeArray));

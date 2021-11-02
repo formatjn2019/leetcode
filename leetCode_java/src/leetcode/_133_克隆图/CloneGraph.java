@@ -25,7 +25,7 @@ class Node {
 
 public class CloneGraph {
     public Node cloneGraph(Node node) {
-        return cloneOneNode(node,new HashMap<>(),new HashSet<>());
+        return cloneOneNode(node, new HashMap<>(), new HashSet<>());
     }
 
     public Node cloneOneNode(Node node, Map<Integer, Node> newItems, Set<Integer> cloned) {
@@ -36,8 +36,8 @@ public class CloneGraph {
         System.out.println(node.neighbors);
         cloned.add(result.val);
         for (Node nodeNeighbor : node.neighbors) {
-            if (!cloned.contains(nodeNeighbor.val)){
-                cloneOneNode(nodeNeighbor,newItems,cloned);
+            if (!cloned.contains(nodeNeighbor.val)) {
+                cloneOneNode(nodeNeighbor, newItems, cloned);
             }
         }
         return result;
@@ -45,14 +45,14 @@ public class CloneGraph {
 
     public static void main(String[] args) {
         CloneGraph cloneGraph = new CloneGraph();
-        Node n1= new Node(1);
-        Node n2= new Node(2);
-        Node n3= new Node(3);
-        Node n4= new Node(4);
-        n1.neighbors.addAll(List.of(n2,n4));
-        n2.neighbors.addAll(List.of(n1,n3));
-        n3.neighbors.addAll(List.of(n2,n4));
-        n4.neighbors.addAll(List.of(n1,n3));
+        Node n1 = new Node(1);
+        Node n2 = new Node(2);
+        Node n3 = new Node(3);
+        Node n4 = new Node(4);
+        n1.neighbors.addAll(List.of(n2, n4));
+        n2.neighbors.addAll(List.of(n1, n3));
+        n3.neighbors.addAll(List.of(n2, n4));
+        n4.neighbors.addAll(List.of(n1, n3));
 
         cloneGraph.cloneGraph(n1);
     }
