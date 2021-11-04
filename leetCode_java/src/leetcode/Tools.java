@@ -15,6 +15,11 @@ public class Tools {
                 .map(Arrays::toString)
                 .forEach(System.out::println);
     }
+    public static void showArray(boolean [][]arr){
+        Arrays.stream(arr)
+                .map(Arrays::toString)
+                .forEach(System.out::println);
+    }
     public static int[][] parseArray(String str){
         List<List<String>> collect = Arrays.stream(str.split("\\],\\["))
                 .map(item -> item.replaceAll("[\\[\\]]*", ""))
