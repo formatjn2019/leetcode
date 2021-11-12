@@ -2,6 +2,7 @@ package leetcode;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Collectors;
 
 public class Tools {
@@ -10,6 +11,15 @@ public class Tools {
                 .map(Arrays::toString)
                 .forEach(System.out::println);
     }
+
+    public static void showArrayWithIndex(int [][]arr){
+        AtomicInteger atomicInteger= new AtomicInteger();
+        Arrays.stream(arr)
+                .peek(ar-> System.out.print(atomicInteger.getAndIncrement()+"\t"))
+                .map(Arrays::toString)
+                .forEach(System.out::println);
+    }
+
     public static void showArray(char [][]arr){
         Arrays.stream(arr)
                 .map(Arrays::toString)
