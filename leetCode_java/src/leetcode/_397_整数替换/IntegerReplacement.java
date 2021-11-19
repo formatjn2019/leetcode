@@ -4,9 +4,6 @@ public class IntegerReplacement {
     public int integerReplacement(int n) {
         int result=0;
         for (long temp=n;temp!=1;result++){
-            if (temp<0){
-                break;
-            }
             if (temp%2==0){
                 temp/=2;
             }else if (temp > 3 && (temp + 1) % 4 == 0) {
