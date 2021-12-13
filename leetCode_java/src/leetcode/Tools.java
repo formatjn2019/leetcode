@@ -11,6 +11,10 @@ public class Tools {
                 .map(Arrays::toString)
                 .forEach(System.out::println);
     }
+    public static void showArray(int []arr){
+        System.out.println(Arrays.toString(arr));
+    }
+
 
     public static void showArrayWithIndex(int [][]arr){
         AtomicInteger atomicInteger= new AtomicInteger();
