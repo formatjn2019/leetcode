@@ -35,7 +35,7 @@ public class Tools {
                 .forEach(System.out::println);
     }
     public static int[][] parseArray(String str){
-        List<List<String>> collect = Arrays.stream(str.split("\\],\\["))
+        List<List<String>> collect = Arrays.stream(str.trim().split("\\],\\["))
                 .map(item -> item.replaceAll("[\\[\\]]*", ""))
                 .map(strItem -> Arrays.stream(strItem.split(",")).collect(Collectors.toList()))
                 .collect(Collectors.toList());
