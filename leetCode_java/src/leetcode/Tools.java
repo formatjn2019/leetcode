@@ -1,5 +1,9 @@
 package leetcode;
 
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -73,6 +77,13 @@ public class Tools {
             }
         }
         return results;
+    }
+
+    static public String[] readData(Path path) throws IOException {
+        return Files.lines(path)
+                .flatMap(str -> Arrays.stream(str.split("\"|,|\\d")))
+                .filter(wd -> wd.length() > 0)
+                .toArray(String[]::new);
     }
 
     public static void main(String[] args) {
