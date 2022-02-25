@@ -15,6 +15,9 @@ public class Tools {
                 .map(Arrays::toString)
                 .forEach(System.out::println);
     }
+    public static void splitLine(){
+        System.out.println("---------------------------");
+    }
 
     public static void showArray(int[] arr) {
         System.out.println(Arrays.toString(arr));
