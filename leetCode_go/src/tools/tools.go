@@ -29,6 +29,22 @@ func ParseArr(str string) [][]int {
 	return result
 }
 
+func ShowArray(arr [][]int) {
+	for i := 0; i < len(arr); i++ {
+		for j := 0; j < len(arr[i]); j++ {
+			print(arr[i][j], " ")
+		}
+		println()
+	}
+}
+func ShowRuneArray(arr [][]rune) {
+	for i := 0; i < len(arr); i++ {
+		for j := 0; j < len(arr[i]); j++ {
+			fmt.Printf("%c\t", arr[i][j])
+		}
+		println()
+	}
+}
 func main() {
 	fmt.Println(ParseArr("[[3,0],[2,2],[3,0],[0,1],[1,2],[0,0],[3,2],[1,2]]"))
 }
