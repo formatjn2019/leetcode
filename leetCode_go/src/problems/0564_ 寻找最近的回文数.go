@@ -1,10 +1,13 @@
-package main
+package problems
 
 import (
 	"math"
 	"strconv"
 )
 
+func NearestPalindromic(n string) string {
+	return nearestPalindromic(n)
+}
 func isPalindromes(str string) bool {
 	arr := []rune(str)
 	for i := 0; i < len(arr)/2; i++ {
@@ -60,11 +63,3 @@ func converToPalindromic(s string) string {
 	}
 	return string(result)
 }
-
-//func main() {
-//	println(nearestPalindromic("1837722381"))
-//	println(nearestPalindromic("230"))
-//	println(nearestPalindromic("123"))
-//	println(nearestPalindromic("1223221"))
-//
-//}

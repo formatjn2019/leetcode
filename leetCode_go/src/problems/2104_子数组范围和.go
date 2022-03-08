@@ -1,4 +1,8 @@
-package main
+package problems
+
+func SubArrayRanges(nums []int) int64 {
+	return subArrayRanges(nums)
+}
 
 func subArrayRanges(nums []int) int64 {
 	result := int64(0)
@@ -16,8 +20,3 @@ func subArrayRanges(nums []int) int64 {
 	}
 	return result
 }
-
-//
-//func main() {
-//	println(subArrayRanges([]int{4, -2, -3, 4, 1}))
-//}

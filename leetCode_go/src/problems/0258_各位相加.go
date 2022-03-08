@@ -1,5 +1,10 @@
-package main
+package problems
 
+func AddDigits(num int) int {
+	return addDigits(num)
+}
+
+//模拟法
 func addDigits(num int) int {
 	result := num
 	for result > 9 {
@@ -12,10 +17,7 @@ func addDigits(num int) int {
 	return result
 }
 
-////数学法
-//func addDigits(num int) int {
-//	return (num-1)%9 + 1
-//}
-//func main() {
-//	println(addDigits(38))
-//}
+//数学法
+func addDigitsMath(num int) int {
+	return (num-1)%9 + 1
+}

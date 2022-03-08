@@ -1,8 +1,12 @@
-package main
+package problems
 
 import (
 	"strings"
 )
+
+func Convert(s string, numRows int) string {
+	return convert(s, numRows)
+}
 
 func convert(s string, numRows int) string {
 	if numRows == 1 {
@@ -33,7 +37,3 @@ func convert(s string, numRows int) string {
 	}
 	return result.String()
 }
-
-//func main() {
-//	println(convert("1234567890", 3))
-//}
