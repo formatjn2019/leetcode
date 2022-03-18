@@ -14,7 +14,7 @@ import (
  * param_4 := obj.GetMinKey();
  */
 func TestAllOne(t *testing.T)  {
-	allOne := problems.Constructor();
+	allOne := problems.AllOneConstructor();
 
 	allOne.Inc("hello");
 	allOne.Inc("goodbye");

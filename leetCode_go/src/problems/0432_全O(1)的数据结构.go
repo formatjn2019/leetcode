@@ -16,7 +16,7 @@ type AllOne struct {
 }
 
 
-func Constructor() AllOne {
+func AllOneConstructor() AllOne {
 	result:= AllOne{strCount: map[string]*listNode{},head: &listNode{}}
 	result.head.pre=result.head
 	result.head.next=result.head
