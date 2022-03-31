@@ -8,6 +8,9 @@ import (
 
 func ParseArr(str string) [][]int {
 	var result = make([][]int, 0)
+	if len(str)==2 {
+		return result
+	}
 	str = strings.TrimSpace(str)
 	str = strings.TrimLeft(str, "[[")
 	str = strings.TrimRight(str, "]]")
