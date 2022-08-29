@@ -7,9 +7,6 @@ func Shuffle(nums []int, n int) []int {
 func shuffle(nums []int, n int) []int {
 	result := make([]int, 2*n)
 	for i := 0; i < 2*n; i += 2 {
-		print(i)
-		print(i / 2)
-		print(i/2 + n)
 		result[i] = nums[i/2]
 		result[i+1] = nums[i/2+n]
 	}
