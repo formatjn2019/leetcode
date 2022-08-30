@@ -2,13 +2,14 @@ package tools
 
 import (
 	"fmt"
+	"src/problems"
 	"strconv"
 	"strings"
 )
 
 func ParseArr(str string) [][]int {
 	var result = make([][]int, 0)
-	if len(str)==2 {
+	if len(str) == 2 {
 		return result
 	}
 	str = strings.TrimSpace(str)
@@ -48,6 +49,17 @@ func ShowRuneArray(arr [][]rune) {
 		println()
 	}
 }
+
+func ShowTree(root *problems.TreeNode) {
+	if root == nil {
+		print("null ")
+	} else {
+		ShowTree(root.Left)
+		print(root.Val, " ")
+		ShowTree(root.Right)
+	}
+}
+
 func main() {
 	fmt.Println(ParseArr("[[3,0],[2,2],[3,0],[0,1],[1,2],[0,0],[3,2],[1,2]]"))
 }
