@@ -7,7 +7,7 @@ func ValidateStackSequences(pushed []int, popped []int) bool {
 	return result
 }
 
-func validateStackSequences(pushed []int, popped []int) bool {
+func validateStackSequences_dfs(pushed []int, popped []int) bool {
 	return stackDFS(pushed, popped, 0, make([]int, 0), make([]int, 0))
 }
 
@@ -33,4 +33,17 @@ func stackDFS(pushed []int, popped []int, index int, stack []int, temp []int) bo
 		}
 	}
 
+}
+
+func validateStackSequences(pushed []int, popped []int) bool {
+	stack := make([]int, 0)
+	index := 0
+	for _, num := range pushed {
+		stack = append(stack, num)
+		for len(stack) > 0 && stack[len(stack)-1] == popped[index] {
+			index++
+			stack = stack[0 : len(stack)-1]
+		}
+	}
+	return len(stack) == 0
 }

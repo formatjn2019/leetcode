@@ -30,7 +30,7 @@ func goodDaysToRobBank(security []int, time int) []int {
 			tlen--
 		}
 		if tlen < 0 {
-			judge[i] = judge[i]
+			// judge[i] = judge[i]
 		} else {
 			judge[i] = false
 		}
