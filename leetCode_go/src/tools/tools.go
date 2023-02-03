@@ -40,8 +40,8 @@ func ParseTree(treeStr string) *problems.TreeNode {
 	fmt.Println(treeStr)
 	strs := strings.Split(treeStr, ",")
 	for index, strn := range strs {
-		fmt.Println(index, strn)
-		fmt.Println(TreeArr)
+		// fmt.Println(index, strn)
+		// fmt.Println(TreeArr)
 		num, err := strconv.Atoi(strings.TrimSpace(strn))
 		TreeArr = append(TreeArr)
 		if err == nil {
