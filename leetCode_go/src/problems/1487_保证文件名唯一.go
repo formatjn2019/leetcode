@@ -29,7 +29,6 @@ func getFolderNames(names []string) []string {
 			nameCount[newName] = 1
 			nameCount[name] = idx
 		}
-
 	}
 	return result
 }
