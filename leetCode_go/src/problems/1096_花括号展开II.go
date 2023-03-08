@@ -5,7 +5,8 @@ import (
 )
 
 func BraceExpansionII(expression string) []string {
-	testItem()
+	//testItem()
+	fmt.Println(expression)
 	return braceExpansionII(expression)
 }
 func testItem() {
@@ -35,28 +36,60 @@ func (i *Item) toStringArr() []string {
 	return result
 }
 
+func (i *Item) toString() string {
+	result := fmt.Sprintf("{%s,[", i.str)
+	for _, sub := range i.sub {
+		result += sub.toString()
+	}
+	return result + "]}"
+}
+
 func braceExpansionII(expression string) []string {
 	//解析字符串
 	arr := []rune(expression)
-	parseItem := func(idx int) (*Item, int) {
-		if arr[idx] == '{' {
 
-		} else {
-			end := idx
+	result, _ := parseItem(arr, 0)
+
+	fmt.Println(result.toString())
+	fmt.Println(result.toStringArr())
+	//{,[{,[{,[{a,[]}{z,[]}]}{a,[{,[{b,[]}{c,[]}]}{,[{ab,[]}{z,[]}]}]}]}]}
+	return nil
+}
+
+func parseItem(arr []rune, idx int) (*Item, int) {
+	result := &Item{}
+	for idx < len(arr) {
+		str := fmt.Sprintf("%c", arr[idx])
+		fmt.Println(str)
+		switch c := arr[idx]; {
+		case c == ',':
+			idx += 1
+			continue
+		case c == '{':
+			sub, newIdx := parseItem(arr, idx+1)
+			result.sub = append(result.sub, sub)
+			idx = newIdx
+		case c == '}':
+			return result, idx + 1
+		case c <= 'z' && c >= 'a':
+			end := idx + 1
 			for end < len(arr) && arr[end] >= 'a' && arr[end] <= 'z' {
+				fmt.Printf("%c", arr[idx])
 				end++
 			}
-			return Item{str: string(arr[:])}
+			if end < len(arr) && arr[end] == '{' {
+				subs, tmp := parseItem(arr, end)
+				subs.str = string(arr[idx:end])
+				result.sub = append(result.sub, subs)
+				idx = tmp
+			} else {
+				result.sub = append(result.sub, &Item{str: string(arr[idx:end])})
+				idx = end
+			}
+
+		default:
+			panic("error")
 		}
 	}
-	for i := 0; i < len(expression); i++ {
-		switch arr[i] {
-		case '{':
-			stack = append(stack, "{")
-		case ',':
-
-		}
-	}
-
-	return nil
+	return result, idx + 1
 }
