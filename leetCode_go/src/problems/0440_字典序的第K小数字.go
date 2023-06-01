@@ -1,13 +1,17 @@
 package problems
 
 func FindKthNumber(n int, k int) int {
-	println(findKthNumber_timeout(n,k))
+	println(findKthNumber_timeout(n, k))
 	return findKthNumber(n, k)
 }
 
-
-
 func getSteps(cur, n int) (steps int) {
+	min := func(a, b int) int {
+		if a > b {
+			return b
+		}
+		return a
+	}
 	first, last := cur, cur
 	for first <= n {
 		steps += min(last, n) - first + 1
@@ -32,14 +36,6 @@ func findKthNumber(n, k int) int {
 	}
 	return cur
 }
-
-func min(a, b int) int {
-	if a > b {
-		return b
-	}
-	return a
-}
-
 
 func findKthNumber_timeout(n int, k int) int {
 
