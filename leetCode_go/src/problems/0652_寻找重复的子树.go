@@ -36,7 +36,7 @@ func findDuplicateSubtrees(root *TreeNode) []*TreeNode {
 	return result
 }
 
-//暴力超时
+// 暴力超时
 func findDuplicateSubtrees_timeout(root *TreeNode) []*TreeNode {
 	results := map[*TreeNode]bool{}
 	memMap := map[int][]*TreeNode{}
