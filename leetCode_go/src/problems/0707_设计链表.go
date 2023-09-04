@@ -63,7 +63,7 @@ func (this *MyLinkedList) DeleteAtIndex(index int) {
 
 /**
  * Your MyLinkedList object will be instantiated and called as such:
- * obj := Constructor();
+ * obj := AuthenticationConstructor();
  * param_1 := obj.Get(index);
  * obj.AddAtHead(val);
  * obj.AddAtTail(val);

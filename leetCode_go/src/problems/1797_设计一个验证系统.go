@@ -7,7 +7,7 @@ type AuthenticationManager struct {
 	tokenTimeMap map[string]int
 }
 
-func Constructor(timeToLive int) AuthenticationManager {
+func AuthenticationConstructor(timeToLive int) AuthenticationManager {
 	return AuthenticationManager{timeToLive: timeToLive, tokenTimeMap: map[string]int{}}
 }
 
@@ -34,7 +34,7 @@ func (this *AuthenticationManager) CountUnexpiredTokens(currentTime int) int {
 
 /**
  * Your AuthenticationManager object will be instantiated and called as such:
- * obj := Constructor(timeToLive);
+ * obj := AuthenticationConstructor(timeToLive);
  * obj.Generate(tokenId,currentTime);
  * obj.Renew(tokenId,currentTime);
  * param_3 := obj.CountUnexpiredTokens(currentTime);

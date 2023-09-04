@@ -58,6 +58,7 @@ func ParseTree(treeStr string) *problems.TreeNode {
 
 	}
 	fmt.Println(TreeArr)
+
 	return TreeArr[1]
 }
 

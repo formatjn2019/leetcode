@@ -6,7 +6,7 @@ import (
 )
 
 func TestAuthenticationManager(t *testing.T) {
-	// am := problems.Constructor(5)
+	// am := problems.AuthenticationConstructor(5)
 	// am.Renew("aaa", 1)
 	// am.Generate("aaa", 2)
 	// cont := am.CountUnexpiredTokens(6)
@@ -29,7 +29,7 @@ func TestAuthenticationManager(t *testing.T) {
 	// ,"countUnexpiredTokens","renew","generate","countUnexpiredTokens","countUnexpiredTokens","countUnexpiredTokens"]
 	// [[28],[2],["xokiw",6],["ofn",7],["dses",15],[17],["ofzu",19],["dses",20],[23],[27],[30]]
 	count := 0
-	am2 := problems.Constructor(28)
+	am2 := problems.AuthenticationConstructor(28)
 	count = am2.CountUnexpiredTokens(2) //0
 	print(count)
 	am2.Renew("xokiw", 6)                //0
@@ -49,7 +49,7 @@ func TestAuthenticationManager(t *testing.T) {
 
 /**
  * Your AuthenticationManager object will be instantiated and called as such:
- * obj := Constructor(timeToLive);
+ * obj := AuthenticationConstructor(timeToLive);
  * obj.Generate(tokenId,currentTime);
  * obj.Renew(tokenId,currentTime);
  * param_3 := obj.CountUnexpiredTokens(currentTime);
