@@ -18,7 +18,7 @@ import (
 
 // Serializes a tree to a single string.
 func TestCodec(t *testing.T) {
-	constructor := problems.Constructor()
+	constructor := problems.ConstructorTree()
 	s := constructor.Serialize(tools.ParseTree("[2,1,3]"))
 	fmt.Println(s)
 	deserialize := constructor.Deserialize(s)

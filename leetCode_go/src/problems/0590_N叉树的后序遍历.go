@@ -1,13 +1,13 @@
 package problems
 
-func postorder(root *Node) []int {
+func postorder(root *TreeNodes) []int {
 	result := make([]int, 0)
 	if root == nil {
 		return result
 	}
-	var walk func(*Node)
+	var walk func(*TreeNodes)
 
-	walk = func(tr *Node) {
+	walk = func(tr *TreeNodes) {
 		for _, v := range tr.Children {
 			walk(v)
 		}

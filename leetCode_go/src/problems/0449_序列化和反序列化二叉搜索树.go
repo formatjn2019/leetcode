@@ -19,7 +19,7 @@ import (
 type Codec struct {
 }
 
-func Constructor() Codec {
+func ConstructorTree() Codec {
 	return Codec{}
 }
 func (this *Codec) Serialize(root *TreeNode) string {

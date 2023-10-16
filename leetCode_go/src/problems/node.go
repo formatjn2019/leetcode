@@ -1,8 +1,13 @@
 package problems
 
 type Node struct {
+	Val  int
+	Next *Node
+}
+
+type TreeNodes struct {
 	Val      int
-	Children []*Node
+	Children []*TreeNodes
 }
 
 type ListNode struct {
