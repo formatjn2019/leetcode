@@ -1,20 +1,20 @@
 package problems
 
-func Preorder(root *TreeNodes) []int {
+func Preorder(root *Node) []int {
 	return preorder(root)
 }
 
-func preorder_stack(root *TreeNodes) []int {
+func preorder_stack(root *Node) []int {
 	result := make([]int, 0)
 
 	return result
 }
 
-func preorder(root *TreeNodes) []int {
+func preorder(root *Node) []int {
 	return preorder_recursion(root, make([]int, 0))
 }
 
-func preorder_recursion(root *TreeNodes, result []int) []int {
+func preorder_recursion(root *Node, result []int) []int {
 	if root == nil {
 		return result
 	}

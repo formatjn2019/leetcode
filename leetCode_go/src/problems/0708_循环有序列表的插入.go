@@ -1,12 +1,12 @@
 package problems
 
-func InsertNode(aNode *Node, x int) *Node {
+func InsertNode(aNode *LinkNode, x int) *LinkNode {
 	return insertNode(aNode, x)
 }
 
-func insertNode(aNode *Node, x int) *Node {
+func insertNode(aNode *LinkNode, x int) *LinkNode {
 	if aNode == nil {
-		node := &Node{Val: x}
+		node := &LinkNode{Val: x}
 		node.Next = node
 		return node
 	}
@@ -16,12 +16,12 @@ func insertNode(aNode *Node, x int) *Node {
 	}
 	// 插入开头
 	if tNode.Val < x || tNode.Next.Val > x {
-		tNode.Next = &Node{Val: x, Next: tNode.Next}
+		tNode.Next = &LinkNode{Val: x, Next: tNode.Next}
 	} else {
 		for tNode.Next.Val < x {
 			tNode = tNode.Next
 		}
-		tNode.Next = &Node{Val: x, Next: tNode.Next}
+		tNode.Next = &LinkNode{Val: x, Next: tNode.Next}
 	}
 	return aNode
 }

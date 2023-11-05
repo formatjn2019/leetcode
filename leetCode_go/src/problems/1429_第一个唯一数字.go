@@ -6,7 +6,7 @@ type FirstUnique struct {
 	idxMap map[int]int
 }
 
-func Constructor(nums []int) FirstUnique {
+func ConstructorFirstUnique(nums []int) FirstUnique {
 	fu := FirstUnique{arr: make([]int, 0, len(nums)), idxMap: map[int]int{}}
 	for _, num := range nums {
 		fu.Add(num)

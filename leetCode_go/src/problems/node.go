@@ -1,13 +1,13 @@
 package problems
 
-type Node struct {
+type LinkNode struct {
 	Val  int
-	Next *Node
+	Next *LinkNode
 }
 
-type TreeNodes struct {
+type Node struct {
 	Val      int
-	Children []*TreeNodes
+	Children []*Node
 }
 
 type ListNode struct {
