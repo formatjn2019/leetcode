@@ -9,7 +9,7 @@ type TicTacToe struct {
 	n             int
 }
 
-func Constructor(n int) TicTacToe {
+func ConstructorChess(n int) TicTacToe {
 	chessbord := make([][]int, n)
 	for i := 0; i < n; i++ {
 		chessbord[i] = make([]int, n)
