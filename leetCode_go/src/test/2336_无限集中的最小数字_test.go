@@ -92,7 +92,7 @@ func (pq *PriorityQueue) Pop() interface{} {
 //}
 
 func TestSmallestInfiniteSet3(t *testing.T) {
-	problems.TFG()
+
 	// 创建一个空的优先队列
 	//pq := make(PriorityQueue, 0)
 	//
