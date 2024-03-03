@@ -33,7 +33,7 @@ func (q *query) Pop() any {
 	return x
 }
 
-func Constructor() SmallestInfiniteSet {
+func SmallestInfiniteSetConstructor() SmallestInfiniteSet {
 	q := make(query, 0)
 	heap.Init(&q)
 	//return SmallestInfiniteSet{q: q, maxNum: 1}

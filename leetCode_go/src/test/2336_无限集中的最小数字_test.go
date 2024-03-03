@@ -6,7 +6,7 @@ import (
 )
 
 func TestSmallestInfiniteSet(t *testing.T) {
-	sifs := problems.Constructor()
+	sifs := problems.SmallestInfiniteSetConstructor()
 	sifs.AddBack(2)
 	println(sifs.PopSmallest())
 	println(sifs.PopSmallest())
@@ -18,7 +18,7 @@ func TestSmallestInfiniteSet(t *testing.T) {
 }
 
 func TestSmallestInfiniteSet2(t *testing.T) {
-	sifs := problems.Constructor()
+	sifs := problems.SmallestInfiniteSetConstructor()
 	//println(sifs.PopSmallest())
 	//sifs.AddBack(1)
 	//println(sifs.PopSmallest())

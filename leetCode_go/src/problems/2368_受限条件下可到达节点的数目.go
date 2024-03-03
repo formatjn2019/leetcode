@@ -51,10 +51,10 @@ func reachableNodes_timeout(n int, edges [][]int, restricted []int) int {
 	}
 	var merge func(x, y int) int
 	merge = func(x, y int) int {
-		rty := find(y)
-		if find(x) != {
-			nodeList[x] = find(y)
-			nodeList[find(x)] = find(y)
+		ltry := find(y)
+		if find(x) != ltry {
+			nodeList[x] = ltry
+			nodeList[find(x)] = ltry
 		}
 		return find(y)
 	}
