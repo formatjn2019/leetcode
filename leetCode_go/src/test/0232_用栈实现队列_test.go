@@ -7,7 +7,7 @@ import (
 )
 
 func TestMyQueue(t *testing.T) {
-	mq := problems.Constructor()
+	mq := problems.MyQueueConstructor()
 	mq.Push(1)
 	mq.Push(2)
 	fmt.Println(mq.Peek())

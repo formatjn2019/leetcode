@@ -8,7 +8,7 @@ type MyQueue struct {
 	flag bool
 }
 
-func Constructor() MyQueue {
+func MyQueueConstructor() MyQueue {
 	return MyQueue{}
 }
 
