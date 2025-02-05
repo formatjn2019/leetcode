@@ -6,7 +6,7 @@ type FindElements struct {
 	root *TreeNode
 }
 
-func Constructor(root *TreeNode) FindElements {
+func ConstructorFind(root *TreeNode) FindElements {
 	var dfs func(node *TreeNode, x int)
 	dfs = func(node *TreeNode, x int) {
 		if node == nil {
