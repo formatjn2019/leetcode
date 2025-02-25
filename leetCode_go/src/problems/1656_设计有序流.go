@@ -5,7 +5,7 @@ type OrderedStream struct {
 	data  []string
 }
 
-func Constructor(n int) OrderedStream {
+func OrderedStreamConstructor(n int) OrderedStream {
 	return OrderedStream{data: make([]string, n)}
 }
 
@@ -23,6 +23,6 @@ func (this *OrderedStream) Insert(idKey int, value string) []string {
 
 /**
  * Your OrderedStream object will be instantiated and called as such:
- * obj := Constructor(n);
+ * obj := AllocateConstructor(n);
  * param_1 := obj.Insert(idKey,value);
  */
