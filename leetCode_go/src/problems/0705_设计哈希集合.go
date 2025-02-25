@@ -6,7 +6,7 @@ type MyHashSet struct {
 	MyHashArr []*ListNode
 }
 
-func Constructor() MyHashSet {
+func MyHashSetConstructor() MyHashSet {
 	nodes := make([]*ListNode, MyHashNum)
 	for i, _ := range nodes {
 		nodes[i] = &ListNode{}
